@@ -6,7 +6,7 @@ from langchain.chat_models import init_chat_model
 model = init_chat_model(
     model="moonshotai/kimi-k2-instruct-0905",
     model_provider="groq",
-    api_key=None
+    api_key="your_api_key_here"
 )
 
 search = DuckDuckGoSearchResults()
@@ -30,4 +30,5 @@ agent = create_deep_agent(
 result = agent.invoke({"messages": [{"role": "user", "content": "what is attack"}]})
 
 # Print the agent's response
+
 print(result["messages"][-1].content)
