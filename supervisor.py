@@ -6,7 +6,7 @@ from langchain.chat_models import init_chat_model
 model = init_chat_model(
     model="qwen/qwen3-32b",
     model_provider="groq",
-    api_key=None
+    api_key="your_api_key_here"
 )
 
 search = DuckDuckGoSearchResults()
@@ -97,4 +97,5 @@ agent = create_deep_agent(
 result = agent.invoke({"messages": [{"role": "user", "content": "BE computer 1st year, programming, python"}]})
 
 # Print the agent's response
+
 print(result["messages"][-1].content)
